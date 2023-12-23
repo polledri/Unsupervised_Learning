@@ -2,7 +2,7 @@ from agent import Agent
 import numpy as np
 from scipy.special import softmax
 
-def polledri_policy(agent: Agent,WORLD_SIZE:int=8) -> str:
+def default_policy(agent: Agent,WORLD_SIZE:int=3) -> str:
     """
     Policy of the agent
     return "left", "right", or "none"
@@ -19,9 +19,11 @@ def polledri_policy(agent: Agent,WORLD_SIZE:int=8) -> str:
     U=np.random.rand()
     if U<alpha: # alpha=somme des pondérations à gauche
         action='left'
+        print('left')
     elif U<alpha+beta: # beta= pondération de la position du joueur
         action='none'
     else:
         action='right'
+        print('right')
     assert action in actions
     return action

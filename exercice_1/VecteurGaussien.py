@@ -1,6 +1,8 @@
 
+
 class VecteurGaussien:import numpy as np
 import matplotlib.pyplot as plt
+import sys
 import numpy as np
 
 class VecteurGaussien:  
@@ -52,5 +54,20 @@ class VecteurGaussien:
         plt.plot(range(1, first_n + 1), empirical_averages)
         plt.title('Convergence vers la valeur attendue')
         plt.xlabel('Taille de l\'échantillon')
-        plt.ylabel('Norme 2 de l\'écart entre la valeur théorique \net empirique de la moyenne')
+        plt.ylabel('Norme 2 de l\'écart entre la valeur théorique \n et empirique de la moyenne')
         plt.show()
+
+# if __name__ == "__main__":
+#     # Récupérer les arguments passés dans le terminal
+#     if len(sys.argv) != 6:
+#         print("Wrong nbr of args: mean_x, mean_y, cov_x, cov_y, nbr_simu")
+#         sys.exit(1)
+
+#     mean_x = int(sys.argv[1])
+#     mean_y = int(sys.argv[2])
+#     cov_x = int(sys.argv[3])
+#     cov_y = int(sys.argv[4])
+#     nbr_simu = int(sys.argv[5])
+
+#     gaussian_vector = VecteurGaussien([mean_x, mean_y], [[cov_x, 0], [0, cov_y]])
+#     gaussian_vector.simulation(nbr_simu)
